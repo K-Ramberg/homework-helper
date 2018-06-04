@@ -1,0 +1,24 @@
+<h1>Edit assignment</h1>
+<form method="POST" action="/homework/{{homeworkAssignment._id}}?_method=PUT">
+    <div>
+        <label for="title">Homework Title</label>
+        <input type="text" name="title" placeholder="Homework Title">
+    </div>
+    <div>
+        <label for="title">Homework Description</label>
+        <textarea type="text" name="description" placeholder="Homework Description"></textarea>
+    </div>
+     <div>
+        <label for="title">subject</label>
+        <input type="text" name="subject" placeholder="Homework subject">
+    </div>
+    <div>
+        <label for="title">created by</label>
+        <input type="text" name="createdBy" placeholder="Homework creator">
+    </div>
+    <div>
+        <label for="title">Due Date</label>
+        <input type="date" name="dueDate" placeholder="Homework Due date">
+    </div>
+    <button type="submit">Save HW</button>
+</form>

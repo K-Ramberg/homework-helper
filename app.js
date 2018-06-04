@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index');
 const homeworkController = require('./routes/homeworkController');
@@ -22,6 +23,7 @@ mongoose.connect('mongodb://localhost/homework-helper')
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+app.use(methodOverride('_method'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

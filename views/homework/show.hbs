@@ -1,0 +1,7 @@
+<h1>Page for {{assignment.title}}</h1>
+<ul>
+    {{assignment.description}}
+</ul>
+<form method="POST" action="/homework/{{assignment._id}}?_method=DELETE">
+<button>delete homework</button>
+</form>
