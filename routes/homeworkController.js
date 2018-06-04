@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const Homework = require('../models/Homework')
 
 /* GET users listing. */
+//localhost/homework
 router.get('/', function (req, res, next) {
-    res.send('respond with a resource');
+    Homework.find() //brings our everythting
+    .then((homeworks) => {
+        res.render('homework/index', {
+            homeworks
+        })
+    })
 });
 
-module.exports = router;
+module.exports = router
