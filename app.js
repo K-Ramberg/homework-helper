@@ -3,11 +3,20 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose')
 
 const indexRouter = require('./routes/index');
 const homeworkController = require('./routes/homeworkController');
 
 const app = express();
+
+mongoose.connect('mongodb://localhost/homework-helper')
+  .then(()=> {
+    console.log('connected to mongoDB')
+  })
+  .catch((err) => {
+    console.log('error: ',err)
+  })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
